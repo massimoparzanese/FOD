@@ -57,15 +57,18 @@ end;
 procedure minimo(var deta:detalle;var min:municipio;var vector:municipios);
 var
   i:integer;
+  pos:integer;
 begin
- for i:= 1 to dimf do
+ min:=vector[1];
+ for i:= 2 to dimf do
   begin
-   leer(deta[i],vector[i]);
-   if(min.codloc = '')then
-     min:=vector[i]
-   else if(min.codloc < vector[i].codloc)then
-          min:=vector[i];
+   if(min.codloc > vector[i].codloc )then
+     begin
+       min:=vector[i];
+       pos:=i;
+     end;
   end;
+ leer(deta[pos],vector[pos]);
 end;
 procedure actualizar_mae(var mae:archivo_maestro;var deta:detalle);
 var
@@ -77,7 +80,10 @@ var
 begin
  Reset(mae);
  for i:= 1 to dimf do
-   reset(deta[i]);
+   begin
+    reset(deta[i]);
+    leer(deta[i],v[i]);   
+   end;
  minimo(deta,min,v);
  read(mae,regm);
  while(min.codloc <> valor_alto)do 
