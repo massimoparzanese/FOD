@@ -47,15 +47,18 @@ end;
 procedure minimo(var detalle:arch_det;var ses:sesiones;var min:sesion);
 var
   i:integer;
+  pos:integer
 begin
-  for i:=1 to dimf do
+  min:= ses[1]
+  for i:=2 to dimf do
     begin
-      leer(detalle[i],ses[i]);
-      if(min.cod = '')then
-        min:=ses[i]
-      else if(ses[i].cod < min.cod)then
-        min:=ses[i];
+      if(ses[i).cod < min.cod)then
+        begin
+         min:=ses[i];
+         pos:=i;
+        end;
     end;
+   leer(detalle[pos],ses[pos]);
 end;
 procedure actualizar(var mae:archivo_maestro;var detalle:arch_det);
 var
@@ -66,8 +69,10 @@ var
 begin
  rewrite(mae);
  for i:=1 to dimf do
-   reset(detalle[i]);
- min.cod:='';
+   begin
+    reset(detalle[i]);
+    leer(detalle[i],s[i]);   
+   end;
  minimo(detalle,s,min);
  while(min.cod <> valor_alto)do
   begin

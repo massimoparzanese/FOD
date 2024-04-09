@@ -45,16 +45,18 @@ end;
 procedure minimo(var min:prod;var v:vector;var v2:vect);
 var
   i:integer;
+  pos:integer;
 begin
-  for i:= 1 to dimf do
+  min := v2[1];
+  for i:= 2 to dimf do
     begin
-      leer(v[i],v2[i]);
-      if(min.cod = '')then
-        min:=v2[i]
-      else if(v2[i].cod <> valor_alto)and(v2[i].cod < min.cod)then
-        min:=v2[i];
-      
+      if(v2[i].cod < min.cod)then
+        begin
+          min:=v2[i];
+          pos:=i;
+        end;
     end;
+  leer(v[pos],v2[pos]);
 end;  
 procedure actualizar_mae(var mae:archivo_maestro;var det:vector);
 var
@@ -66,9 +68,11 @@ var
 begin
   reset(mae);
   read(mae,m);
-  min.cod:='';
   for i:= 1 to dimf do
-    reset(det[i]);
+    begin
+      reset(det[i]);
+      leer(det[i],regd[i]);
+    end; 
   minimo(min,det,regd);
   writeln('Los productos con stock minimo menor al actual son:');
   while(min.cod <> valor_alto)do

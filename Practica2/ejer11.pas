@@ -43,5 +43,77 @@ no encontrado”.
 ● El recorrido del archivo debe realizarse una única vez procesando sólo la información
 necesaria.}
 program ejer11;
+const 
+  valor_alto = 'ZZZZ';
+type
+ cadenita = string[4];
+ fecha = record
+    dia:1..31;
+    mes:1..12;
+    anio:integer;
+   end;
+ usuario = record
+    id:cadenita;
+    fec:fecha;
+    tiemp:integer;
+   end;
+  archivo = file of usuario;
+procedure leer(var a:archivo;var u:usuario);
+begin
+ if(not EOF(a))then
+   read(a,u)
+ else
+   u.id:=valor_alto;
+end;
+procedure Informar(var a:archivo);
+var
+ tiempo:integer;
+ totalanio:integer;
+ totalmes:integer;
+ usu:usuario;
+ mes:1..12;
+ dia:1..31;
+ anio:integer;
+begin
+ reset(a);
+ leer(a,usu);
+ writeln('Ingrese el anio a procesar');
+ readln(anio);
+ while(usu.id <> valor_alto)do
+   begin
+     while (usu.id <> valor_alto)and (anio <> usu.fec.anio)do
+        leer(a,usu);
+     if(anio = usu.fec.anio)then
+       begin
+         writeln('Anio :',anio);
+         totalanio:=0;
+         while(anio = usu.fec.anio)do
+			begin
+			   totalmes:=0;
+			   mes:=usu.fec.mes;
+			   writeln('Mes: ',mes);
+			   while(anio = usu.fec.anio)and(mes = usu.fec.mes)do
+				begin
+					dia:= usu.fec.anio;
+					writeln('Dia: ',dia);
+					tiempo:=0;
+					while(anio = usu.fec.anio)and(mes = usu.fec.mes)and(dia = usu.fec.dia)do
+					  begin
+						writeln(usu.id,' Tiempo Total de acceso en el dia ',usu.fec.dia,' y mes ',usu.fec.mes);
+                        tiempo:=tiempo + usu.tiemp;
+                        leer(a,usu);
+					 end;
+					writeln('Tiempo total de acceso del dia ',dia,' es ',tiempo);
+					totalmes:= totalmes + tiempo;
+				end;
+			  writeln('El tiempo total de acceso del mes ',mes,' es ',totalmes);
+			  totalanio:=totalanio + totalmes;
+			end;
+		  writeln('El total de tiempos de acceso en todo el anio ', anio, ' es ',totalanio);
+	   end
+	   else writeln('año no encontrado');
+   end;
+end;
+	      
 begin
 end.
