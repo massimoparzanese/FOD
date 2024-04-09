@@ -1,0 +1,6 @@
+1 100 motorola
+10 24 descripcion
+descripcion
+2 200 apple
+23 65 descripcion
+descripcion
