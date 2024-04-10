@@ -106,7 +106,15 @@ repeat
  readln(num);
  case num of
    0:writeln('El programa termino');
-   1:inciso_a(arch_mae,arch_det);
+   1:begin
+      writeln('ingrese el nombre del archivo maestro');
+      readln(cad);
+      assign(arch_mae,cad);
+      writeln('ingrese el nombre del archivo maestro');
+      readln(cad);
+      assign(arch_det,cad);
+      inciso_a(arch_mae,arch_det);
+     end;  
    2:begin
      writeln('ingrese el nombre del archivo de texto');
      readln(cad);

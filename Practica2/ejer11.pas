@@ -113,7 +113,13 @@ begin
 	   end
 	   else writeln('año no encontrado');
    end;
+  close(a);
 end;
-	      
+var
+  a:archivo;
+  cad:string[10];	      
 begin
+readln(cad);
+Assign(a,cad);
+Informar(a);
 end.
