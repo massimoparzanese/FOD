@@ -43,7 +43,7 @@ begin
 end;
 procedure minimo(var deta1:archivo_detalle;var deta2:archivo_detalle;var r1,r2:vuelo;var min:vuelo);
 begin
- if(r1.destino < r2.destino )then
+ if((r1.destino < r2.destino )or((r1.destino = r2.destino)and(r1.fec.anio < r2.fec.anio))or((r1.destino = r2.destino)and(r1.fec.anio = r2.fec.anio)and(r1.fec.mes < r2.fec.mes))or((r1.destino = r2.destino)and(r1.fec.anio = r2.fec.anio)and(r1.fec.mes = r2.fec.mes)and(r1.fec.dia < r2.fec.dia))or((r1.destino = r2.destino)and(r1.fec.anio = r2.fec.anio)and(r1.fec.mes = r2.fec.mes)and(r1.fec.dia = r2.fec.dia)and(r1.hora < r2.hora)))then
    begin
     min:=r1;
     leer(deta1,r1);
