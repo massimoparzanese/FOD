@@ -1,0 +1,24 @@
+0  30     No existe
+ 3.0000000000000000E+003
+Absolutamente Nada
+Nada
+203  120    Juan Bautista Alberdi
+ 5.0000000000000000E+003
+La sombra del imperio
+Drama
+209  20  Juan
+ 2.0000000000000000E+002
+pin
+Drama
+100  90     Dario Barassi
+ 2.0000000000000000E+003
+Dios sabra
+drama
+250  140     Bram Stoker
+ 5.0000000000000000E+004
+Dracula
+suspenso y terror
+220  121     Juan Roche
+ 1.0000000000000000E+003
+El Pan
+Terror

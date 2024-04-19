@@ -1,0 +1,10 @@
+0 Nada
+20 Rosas
+21 Orquídeas
+3  Hortensias
+4  Tulipanes
+8  margarita
+10 clavel
+22 amapola
+32 narciso
+2 begonia

@@ -62,7 +62,7 @@ begin
  min:=vector[1];
  for i:= 2 to dimf do
   begin
-   if(min.codloc > vector[i].codloc )then
+   if(min.codloc > vector[i].codloc )or((min.codloc = vector[i].codloc) and (min.codcep > vector[i].codcep))then
      begin
        min:=vector[i];
        pos:=i;
@@ -104,12 +104,14 @@ begin
           regd.rec:= regd.rec + min.rec;
           minimo(deta,min,v);
          end;
-       while(regm.cod <> regd.codloc)and(regm.codcep <> regd.codcep)do
+       while(regm.cod <> regd.codloc)or(regm.codcep <> regd.codcep)do
          read(mae,regm);
        regm.fal:= regm.fal + regd.fal;
        regm.rec:=regm.rec + regd.rec;
        regm.act:= regd.act;
        regm.nue:= regd.nue;
+       seek(mae,filepos(mae)-1);
+       write(mae,regm);
      end;
     
   end;

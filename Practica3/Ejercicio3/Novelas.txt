@@ -1,0 +1,24 @@
+0  30   No existe
+3000
+Absolutamente Nada
+Nada
+203  120  Juan Bautista Alberdi
+5000
+La sombra del imperio
+Drama
+205  110   Tomas Rebord
+10000
+Divina Comedia
+humor
+100  90   Dario Barassi
+2000
+Dios sabra
+drama
+250  140   Bram Stoker
+50000
+Dracula
+suspenso y terror
+220  121   Juan Roche
+1000
+El Pan
+Terror

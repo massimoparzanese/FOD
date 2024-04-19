@@ -127,6 +127,9 @@ while(min.cod <> valor_alto)do
         write(mae,regm);
        end;
   end;
+for i:= 1 to dimf do
+   close(deta[i]);
+close(mae);
 end;    
 begin
 end.
