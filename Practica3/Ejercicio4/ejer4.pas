@@ -100,21 +100,18 @@ begin
         end;
  close(a);
 end;
-procedure modulo_eliminar(var a:tArchFlores);
+procedure modulo_eliminar(var a:tArchFlores;f:reg_flor);
 var
- cod:integer;
  pos:integer;
- f:reg_flor;
+ flore:reg_flor;
  aux:reg_flor;
 begin
- writeln('Ingrese el cod de la flor a eliminar:');
- readln(cod);
  reset(a);
  leer(a,aux);
- leer(a,f);
- while(f.codigo <> valor_alto)and(cod <> f.codigo)do
-   leer(a,f);
- if(cod = f.codigo)then
+ leer(a,flore);
+ while(flore.codigo <> valor_alto)and(f.codigo <> flore.codigo)do
+   leer(a,flore);
+ if(f.codigo = flore.codigo)then
    begin
      pos:=filepos(a)-1;
      seek(a,pos);
@@ -130,6 +127,7 @@ var
   a:tArchFlores;
   t:text;
   cad:string[15];
+  flore:reg_flor;
   cod:integer;
 begin
 writeln('Ingrese el nombre del archivo binario');
@@ -137,7 +135,7 @@ readln(cad);
 assign(a,cad);
 writeln('Ingrese el nombre de la flor a agregar');
 readln(cad);
-writeln('Ingrese el codigo de flor a eliminar');
+writeln('Ingrese el codigo de flor a agregar');
 readln(cod);
 writeln('------------------------------');
 writeln('Impresion sin dicha flor agregada');
@@ -148,4 +146,7 @@ writeln('------------------------------');
 writeln('Impresion con dicha flor agregada');
 imprimir_archivo(a);
 writeln('------------------------------');
+writeln('Ingrese el codigo de flor a eliminar');
+readln(flore.codigo);
+modulo_eliminar(a,flore);
 end.
