@@ -95,7 +95,7 @@ begin
      write(a,aux);
    end
    else begin
-          seek(a,filesize(a)-1);
+          seek(a,filesize(a));
           write(a,f);        
         end;
  close(a);
