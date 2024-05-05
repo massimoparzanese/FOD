@@ -71,10 +71,10 @@ begin
     begin
     while((av.cod <> valor_alto)and(av.nom  <> aux.nom))do
       leer(a,av);
-     if((av.cod <> valor_alto)and(av.nom = aux.nom) and (av.cod >  0))then
+     if((av.cod <> valor_alto)and(av.nom = aux.nom) and (av.cod >  0))then // Pregunto si lo encontré y no es un registro que ya marqué
         begin
-          av.cod := av.cod * -1;
-          cant:= cant + 1;
+          av.cod := av.cod * -1; // marco con codigo negativo
+          cant:= cant + 1;  // sumo 1 a la cantidad a eliminar
          end;
       leer_ave(aux);
       seek(a,0);
@@ -94,14 +94,14 @@ leer(a,av);
     begin
      while((av.cod <> valor_alto )and(av.cod > 0 ))do
        leer(a,av);
-      if(av.cod <> valor_alto)then
+      if(av.cod <> valor_alto)then // Si el codigo de ave es distinto de valor alto, encontre el dato que busco
        begin
-        cant:=cant+1;
-        pos:=filepos(a)-1;
+        cant:=cant+1; // Incremento en 1 la cantidad de elementos que elimino
+        pos:=filepos(a)-1; // Me guardo la posicion donde tengo que poner el registro de la ultima pos
         seek(a,filesize(a)-cant);
         leer(a,av);
-        seek(a,pos);
-        write(a,av);
+        seek(a,pos); // Me posiciono en el lugar del registro del archivo que debo eliminar
+        write(a,av); // lo elimino pisandolo
        end;
     end;
    cant:=cant-1;
@@ -129,7 +129,9 @@ var
   t:text;
   a:archivo;
   cad:cadenita;
+  cant:integer;
 begin
+cant:=0;
 writeln('Ingrese el nombre del arch de texto');
 readln(cad);
 assign(t,cad);
@@ -138,8 +140,8 @@ readln(cad);
 assign(a,cad);
 cargar_binario(t,a);
 imprimir(a);
-eliminar_logico(a);
+eliminar_logico(a,cant);
 //imprimir(a);
-eliminar_completo(a);
+eliminar_completo(a,cant);
 imprimir(a);
 end.
