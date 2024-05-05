@@ -59,7 +59,7 @@ begin
  close(t);
  close(a);
 end;
-procedure eliminar_logico(var a:archivo);
+procedure eliminar_logico(var a:archivo;var cant:integer);
 var
   av:ave;
   aux:ave;
@@ -71,18 +71,17 @@ begin
     begin
     while((av.cod <> valor_alto)and(av.nom  <> aux.nom))do
       leer(a,av);
-     if((av.cod <> valor_alto)and(av.nom = aux.nom))then
+     if((av.cod <> valor_alto)and(av.nom = aux.nom) and (av.cod >  0))then
         begin
           av.cod := av.cod * -1;
-          seek(a,filepos(a)-1);
-          write(a,av);
+          cant:= cant + 1;
          end;
       leer_ave(aux);
       seek(a,0);
     end;
  close(a);
 end;
-procedure eliminar_completo(var a:archivo);
+procedure eliminar_completo(var a:archivo;var eliminados:integer);
 var
   av:ave;
   cant:integer;
@@ -91,7 +90,7 @@ begin
 cant:=0;
 reset(a);
 leer(a,av);
-  while(av.cod <> valor_alto )do
+  while(av.cod <> valor_alto ) and (filepos(a) < filesize(a) - eliminados) do
     begin
      while((av.cod <> valor_alto )and(av.cod > 0 ))do
        leer(a,av);
