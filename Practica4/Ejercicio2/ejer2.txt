@@ -1,0 +1,69 @@
+B)
+Consigna:
+Suponga que cada nodo del árbol B cuenta con un tamaño de 512 bytes. ¿Cuál
+sería el orden del árbol B (valor de M) que se emplea como índice? Asuma que
+los números enteros ocupan 4 bytes. Para este inciso puede emplear una fórmula
+similar al punto 1b, pero considere además que en cada nodo se deben
+almacenar los M-1 enlaces a los registros correspondientes en el archivo de
+datos.
+
+Respuesta:
+N = 512 A = 4 C = 4 B = 4
+
+N = (M-1) * A + M *B + C + 4 * (M - 1)
+
+512 = (M - 1) * 4 + M * 4 + 4 + 4 * (M - 1)
+512 = 4M - 4 + 4M + 4 + 4M - 4
+512 = 4M - 4 + 8M
+512 + 4 = 4M + 8M
+516 = 12M
+516/12 = M
+43 = M
+Arbol de orden 43
+
+C) 
+Consigna:
+¿Qué implica que el orden del árbol B sea mayor que en el caso del ejercicio 1?
+
+Respuesta:
+Si el orden es mas grande, mas registros entran en el nodo. Al entrar mas,
+registros, la altura del arbol se hace mas chica, entonces, la cantidad
+de lecturas para encontrar un nodo es menor.
+
+D)
+Consigna:
+ Describa con sus palabras el proceso para buscar el alumno con el DNI 12345678
+usando el índice definido en este punto.
+
+Respuesta:
+Leo la raíz, pregunto si el DNI que busco es igual a alguno de los DNI que se encuentran
+en ese nodo. Si no está ahi, pregunto si es mayor a lo que hay en la primera pos, si da 
+falso, agarro el camino de la primera posicion de los hijos. Si da verdadero sigo preguntando
+así con los demas elementos de ese nodo, en el nro de elemento que me de falso. Por ejemplo
+si me da falso en el registro nro 3 del nodo, debo tomar el camino del hijo nro 3. Y asi
+debo ir haciendo por cada nodo hasta encontrar el DNI que busco. Hasta llegar a una hoja,
+si ya en la hoja no se encuentra, despues de haber pasado por parte del arbol. El DNI que 
+busco no está en el arbol.
+
+E)
+Consigna:
+¿Qué ocurre si desea buscar un alumno por su número de legajo? ¿Tiene sentido
+usar el índice que organiza el acceso al archivo de alumnos por DNI? ¿Cómo
+haría para brindar acceso indizado al archivo de alumnos por número de legajo?
+
+Respuesta:
+Si se desea buscar por numero de legajo, la busqueda sería ineficiente. Ya que
+el índice que brindamos esta ordenado por nro de DNI. No por legajo, tiene sentido
+organizarlo por DNI, ya que es único. Para brindar acceso por nro de legajo, se podría
+crear un nuevo índice ordenado por dicho índice.
+
+F)
+Consigna:
+Suponga que desea buscar los alumnas que tienen DNI en el rango entre
+40000000 y 45000000. ¿Qué problemas tiene este tipo de búsquedas con apoyo
+de un árbol B que solo provee acceso indizado por DNI al archivo de alumnos?
+
+Respuesta:
+Que puede que se deba recorrer todo el árbol, ya que es un rango, y no un DNI
+en específico. Y puede que los DNI que haya en el arbol esten todos entre ese rango,
+en el peor de los casos.

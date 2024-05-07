@@ -1,0 +1,66 @@
+Pregunta:
+B)Suponga que la estructura de datos que representa una persona (registro de
+persona) ocupa 64 bytes, que cada nodo del árbol B tiene un tamaño de 512
+bytes y que los números enteros ocupan 4 bytes, ¿cuántos registros de persona
+entrarían en un nodo del árbol B? ¿Cuál sería el orden del árbol B en este caso (el
+valor de M)? Para resolver este inciso, puede utilizar la fórmula N = (M-1) * A + M *
+B + C, donde N es el tamaño del nodo (en bytes), A es el tamaño de un registro
+(en bytes), B es el tamaño de cada enlace a un hijo y C es el tamaño que ocupa
+el campo referido a la cantidad de claves. El objetivo es reemplazar estas
+variables con los valores dados y obtener el valor de M (M debe ser un número
+entero, ignorar la parte decimal).
+
+Respuesta: N = 512 A = 64 C = 4 B = 4
+
+512 = (M - 1) * 64 + M * 4 + 4
+512 - 4 = (M - 1) * 64 + M * 4
+508 = (M - 1 ) * 64 + M * 4
+508 = 64M - 64 + 4M
+508 + 64 = 68M
+572 = 68M
+572/68 = M
+8 = M
+
+Entrarían 8 registros
+
+C) 
+Pregunta:
+¿Qué impacto tiene sobre el valor de M organizar el archivo con toda la
+información de los alumnos como un árbol B?
+
+Respuesta:
+Al organizarlo como arbol B, se toma M como la cantidad de registros que
+entran por nodo. Mientras mas crezca M, mas nodos entraran, y mientras 
+mas nodos entren, mas se achica la altura de arbol. Y con ello, la cantidad
+de lecturas, ya que la cantidad de lecturas que yo haga para encontrar un
+registro dentro de los nodos, depende en parte de la altura del arbol.
+
+D)
+Pregunta:
+ ¿Qué dato seleccionaría como clave de identificación para organizar los
+elementos (alumnos) en el árbol B? ¿Hay más de una opción?
+
+Respuesta: Numero de Legajo. Si, la otra opcion es utilizar Nro de DNI
+
+E)
+Pregunta
+Describa el proceso de búsqueda de un alumno por el criterio de ordenamiento
+especificado en el punto previo. ¿Cuántas lecturas de nodos se necesitan para
+encontrar un alumno por su clave de identificación en el peor y en el mejor de
+los casos? ¿Cuáles serían estos casos?
+Respuesta:
+Mejor caso: 1 lectura, lo que busco se encuentra en la raíz.
+Peor caso: H lecturas. Donde H es la altura del árbol. En el peor de los casos
+lo que busco se encuentra en un nodo terminal, y como hablamos de Arbol B, al
+estar todos los nodos terminales al mismo nivel, siempre será H en el peor de
+los casos.
+
+F)
+Pregunta:
+¿Qué ocurre si desea buscar un alumno por un criterio diferente? ¿Cuántas
+lecturas serían necesarias en el peor de los casos?
+
+Respuesta: Puede pasar que, en el caso de el nombre y apellido, haya mas de
+un alumno con ese mismo nombre y apellido. A su vez se tendría que tener otra
+cosa que distinga a ese alumno de los demas con ese nombre y apellido.
+En el peor de los casos se leerian todos los nodos del arbol B.
