@@ -22,6 +22,6 @@ type
      claves = array[1..M-1] of alumno;
      Hijos = array [1..M] of integer;
      end;
-    ArbolB = file of alumno;
+    ArbolB = file of Nodo;
 begin
 end.

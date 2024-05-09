@@ -1,0 +1,65 @@
+A)
+Consigna:
+PosicionarYLeerNodo(): Indique qué hace y la forma en que deben ser
+enviados los parámetros (valor o referencia). Implemente este módulo en Pascal.
+
+Respuesta:
+Para mi se pasan por referencia, excepto el NRR que no se debe modificar
+en ese modulo. Porque se modifica la posicion donde queda parado el 
+puntero del archivo,  y a su vez el nodo que se lee se debe guardar en 
+el registro nodo. Así que, se pasan 2 por referencia, y uno por valor.
+Se posiciona en el archivo en la posicion que se pasa por parametro
+y lee del archivo. 
+
+B)
+Consigna:
+claveEncontrada(): Indique qué hace y la forma en que deben ser enviados los
+parámetros (valor o referencia). ¿Cómo lo implementaría?
+
+Respuesta:
+A, clave_encontrada y pos por referencia. Nodo y clave, por valor.
+El archivo siempre va por referencia, y clave_encontrada parece
+ser un booleano por como se utiliza en el if siguiente. Se pasa
+por referencia para modificarse luego de lo que se hace en el 
+modulo o no. Pos se pasa por referencia para reemplazarse por
+la nueva posicion a leer si la comparacion da falso. Y los demas
+por valor ya que no se deben modificar en este procedimiento.
+  El modulo parece que recibe el archivo, el nodo, la clave a 
+buscar, y la posicion dentro del array del nodo. Compara
+la clave recibida con la que esta en la posicion dentro
+del array de claves del nodo. Y si da verdadero la comparacion
+por igual, clave_encontrada obtiene el valor true, si no
+queda o se pone en false. A su vez, se guardaria la nueva posicion
+a leer en la variable pos. Digamos, si los nodos que se encuentran
+no son iguales a ese nodo o dependiendo si la clave que buscamos es
+mayor o menor a las que tenemos, nos guardamos la posicion
+del hijo a leer próximamente. Para luego leerlo con el procedimiento
+posicionarYLeerNodo().
+
+C)
+Consigna:
+¿Existe algún error en este código? En caso afirmativo, modifique lo que
+considere necesario. PosicionarYLeerNodo(), no verifique que la posicion
+de NRR sea válida, en mi caso, lo implemente de forma que contemple eso. 
+Pero si no se tiene en cuenta eso, puede que el codigo tire un error
+en ejecución ya que se quiere acceder a una posicion invalida del archivo.
+
+
+Respuesta:
+Para mi, si, pero unicamente si los modulos anteriores no contemplan
+el caso en el que el NRR sea inválido(tenga un valor que no es una
+posicion real del archivo).
+
+D)
+Consigna:
+¿Qué cambios son necesarios en el procedimiento de búsqueda implementado
+sobre un árbol B para que funcione en un árbol B+?
+
+Respuesta:
+La idea para que funcione con Árboles B+ sería el verificar que estoy
+parado en un nodo terminal,y si no estoy en el nodo terminal, sigo
+comparando como en las busquedas normales con arboles B para llegar
+al nodo terminal y encontrar, o no, el nodo. Ya que a pesar de que 
+"encuentre" el nodo en los nodos internos, no me sirve ya que son 
+copias para mantener la estructura del árbol, pero, los nodos "reales" 
+estan en las hojas. 

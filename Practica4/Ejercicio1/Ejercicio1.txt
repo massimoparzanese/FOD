@@ -30,10 +30,12 @@ información de los alumnos como un árbol B?
 
 Respuesta:
 Al organizarlo como arbol B, se toma M como la cantidad de registros que
-entran por nodo. Mientras mas crezca M, mas nodos entraran, y mientras 
-mas nodos entren, mas se achica la altura de arbol. Y con ello, la cantidad
-de lecturas, ya que la cantidad de lecturas que yo haga para encontrar un
-registro dentro de los nodos, depende en parte de la altura del arbol.
+entran por nodo. M tiene un gran impacto ya que al alterar el tamaño del 
+nodo, altera en lo que concierne a la cantidad de accesos a disco, cada
+vez que se hace una lectura, se trae de disco al buffer una cantidad de
+registros, y el tamaño del registro(El M), altera a las lecturas porque
+dependiendo del tamaño de M, puede que en mas o menos lecturas, puedas
+traerte todos los registros de disco al buffer.
 
 D)
 Pregunta:

@@ -1,0 +1,59 @@
+A)
+Consigna:
+a. ¿Cómo se organizan los elementos (claves) de un árbol B+? ¿Qué elementos se
+encuentran en los nodos internos y que elementos se encuentran en los nodos
+hojas?
+
+Respuesta:
+Las claves mantienen el "orden" del arbol B+. Los nodos internos y la raíz son
+"copias" de las algunas claves que se encuentan en las hojas. O sea, las claves
+que se encuentran en los nodos internos sirven para respetar la estructura y 
+propiedades que tiene el arbol B+. En el sentido de, no cualquier clave puede 
+"promocionar" una copia como nodo interno. Los elementos en los nodos hojas son
+las claves de los "registros de verdad".
+
+B)
+Consigna:
+b. ¿Qué característica distintiva presentan los nodos hojas de un árbol B+? ¿Por
+qué?
+
+Respuesta:
+Que en ellas se encuentran las claves "reales" de los registros del archivo. Y
+poseen un puntero a su hermano adyacente derecho(si lo tienen).Se ubican ahí 
+ya que mejoran el recorrido secuencial, al estar todos los elementos en las
+hojas, y tener el puntero, se puede recorrer las hojas como si fuesen
+una "lista".
+
+D)
+Consigna:
+Describa, con sus palabras, el proceso de búsqueda de un alumno con un DNI
+específico haciendo uso de la estructura auxiliar (índice) que se organiza como
+un árbol B+. ¿Qué diferencia encuentra respecto a la búsqueda en un índice
+estructurado como un árbol B?
+
+Respuesta:
+Se lee la raíz. Se recorre masomenos de la misma forma que el arbol B. Solo que
+lo que lo diferencia, sería que se debe llegar si o si a una hoja, para determinar
+si el nodo esta o no está. O sea, se lee la raíz, se compara con cada clave de la 
+raíz para ver que camino tomar, se toma el camino correspondiente, se vuelve a 
+comparar con el hijo de la raíz de la misma forma, y en el momento que se llegue
+a una hoja, se compara con los elementos de esa hoja, y si no está ahi, el 
+elemento buscado no se encuentra en el árbol. En todos los casos, se haran
+H lecturas para encontrar un dato en un nodo, donde H es la altura del arbol.
+
+E)
+Consigna:
+Explique con sus palabras el proceso de búsqueda de los alumnos que tienen DNI
+en el rango entre 40000000 y 45000000, apoyando la búsqueda en un índice
+organizado como un árbol B+. ¿Qué ventajas encuentra respecto a este tipo de
+búsquedas en un árbol B?
+
+Respuesta:
+Se lee la raíz, se compara el rango minimo con los elementos de la raiz 
+para saber que camino tomar, se toma el camino de uno de los hijos, se compara
+de nuevo con los elementos del hijo, y así hasta llegar a las hojas. Unicamente
+se imprimiran o se operará con las hojas. Cuando se llega a una hoja, si cumple 
+que este entre 40000000 y 45000000, se imprime o se hace lo que se debe, 
+luego con el puntero al hermano se accede de manera
+"directa" y se compara, y así hasta que no se cumpla mas la condicion o
+no tenga mas hermanos hojas con los cuales comparar.
