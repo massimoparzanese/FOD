@@ -1,0 +1,51 @@
+A)
+Consigna:
+Defina los siguientes conceptos:
+● Overflow
+
+Respuesta:
+Es un evento que se produce cuando se quiere
+insertar un elemento en un nodo, y dicho nodo
+no tiene mas lugar para insertar el elemento.
+Estos eventos ocurren mas que nada con Árboles 
+balanceados, ya sea B, B+ o B*.
+
+B)
+Consigna:
+Defina los siguientes conceptos:
+Underflow
+
+Respuesta:
+Es un evento que se produce cuando se quiere
+eliminar un elemento de un nodo y con dicha 
+eliminacion, el nodo no supera, ni iguala,
+la cantidad minima de nodos admitida en 
+Árboles balanceados, ya sea B, B+ o B*.
+
+C)
+Consigna:
+Defina los siguientes conceptos:
+Redistribución
+
+Respuesta:
+Ocurre cuando un nodo entra en 
+underflow, lo que hace es 
+intercambiarse claves con un nodo
+adyacente hermano (en caso que este 
+tenga suficientes elementos).
+
+D)
+Consigna:
+Defina los siguientes conceptos:
+Fusión o concatenación.
+
+Respuesta:
+Si un nodo adyacente hermano está 
+al mínimo (no le sobra ningún elemento) 
+no se puede redistribuir, se concatena, 
+es decir, se fusiona con su hermano adyacente
+disminuyendo la cantidad de nodos, y en algunos
+casos, la altura del arbol.
+
+
+
