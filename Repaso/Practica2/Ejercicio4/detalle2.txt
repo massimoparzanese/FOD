@@ -1,0 +1,5 @@
+10000 19000 Buenos Aires
+100 2000 Buenos Aires
+100 5000 Cordoba
+300 1000 Formosa
+150 500 Formosa

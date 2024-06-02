@@ -1,0 +1,4 @@
+500 2000 Buenos Aires
+100 5000 Cordoba
+300 1000 Formosa
+1000 5000 Tierra del Fuego

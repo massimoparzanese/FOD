@@ -1,0 +1,20 @@
+1 Juan Pérez
+12 2 2023 30000
+1 Juan Pérez
+5 4 2023 15000
+1 Juan Pérez
+10 4 2023 10000
+1 Juan Pérez
+22 6 2023 9000
+2 María García
+11 1 2022 18000
+2 María García
+15 5 2022 20000
+2 María García
+20 3 2023 25000
+3 Ana López
+17 1 2023 7500
+3 Ana López
+8 3 2023 12000
+3 Ana López
+25 4 2022 1000

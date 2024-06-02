@@ -1,0 +1,10 @@
+100 2000 Buenaso
+1000 50 Fideos
+103 3000 hecho en misiones
+1200 100 arroz integral
+106 3000 elaborada con palo
+20 10 yerba mate taragui
+108 1000 sabor jamon
+40 10 maní cervecero 100g
+109 1500 limpia todo
+60 10 Procenex 

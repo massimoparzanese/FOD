@@ -1,0 +1,15 @@
+200
+2000 
+Juan Perez
+200
+200 
+Juan Perez
+200
+20 
+Juan Perez
+201
+200 
+Juan Carlos
+201
+100 
+Juan Carlos

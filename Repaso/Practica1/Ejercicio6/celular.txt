@@ -1,0 +1,9 @@
+203 2000 samsung
+10  100 Soy un celular 
+A33
+205 300 samsung
+11  19 Lol 
+A22
+207 2000 Apple
+0 19 Chetos de mierda 
+iphone X

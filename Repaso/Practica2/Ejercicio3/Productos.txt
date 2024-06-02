@@ -1,0 +1,8 @@
+10 1000 Arroz
+100 10
+13 2000 Servilleta Sussex
+70 20
+14 1500 Maní pelado 100 gramos
+15 10
+20 4000 Hamburguesas paty clasicas
+50 20
